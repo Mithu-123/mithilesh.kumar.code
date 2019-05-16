@@ -19,11 +19,12 @@ public class LargestSumSubarray {
         start_Index = end_Index = 0;
         boolean isStartIndexUpdated = true;
         
-   
+   //Implemented kadanes Algorithm 
         for (int i = 0; i < array.length; i++) {
             max_ending_here = max_ending_here + array[i];
 
             if (max_ending_here > max_so_far) {
+            	//Check is startIndex updated 
                 if (isStartIndexUpdated) {
                     start_Index = i;
                     isStartIndexUpdated = false;
@@ -32,6 +33,7 @@ public class LargestSumSubarray {
                 end_Index = i;
             }
             if (max_ending_here < 0) {
+            	//updating start index 
                 isStartIndexUpdated = true;
                 max_ending_here = 0;
             }

@@ -73,7 +73,7 @@ public class BinarySearchTree {
 	private static void updateParentDataWithSumOfChildData(Node root) {
 		if (root == null) {
 			return;
-		}
+	}
 		updateParentDataWithSumOfChildData(root.left);
 		updateParentDataWithSumOfChildData(root.right);
 		if (root.left != null && root.right != null) {
